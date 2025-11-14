@@ -1,5 +1,20 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "property-ai-chatbot/package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "property-ai-chatbot/dist/$1"
+    }
+  ]
+}
+{
+  "version": 2,
   "env": [
     "GROQ_API_KEY",
     "GROQ_MODEL",
